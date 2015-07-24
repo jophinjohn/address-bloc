@@ -163,7 +163,7 @@
      case selection
  # #18
      when "n"
- # #19
+ # #19j
      when "d"
       delete_entry(entry)
      when "e"
