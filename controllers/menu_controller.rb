@@ -16,14 +16,15 @@
      puts "3 - Search for an entry"
      puts "4 - Import entries from a CSV"
      puts "5 - View Entry by entry number"
-     puts "6 - Exit"
+     puts "6 - Nuke em entries"
+     puts "7 - Exit"
      print "Enter your selection: "
     
      
  
  # #3
      selection = gets.to_i
-     #puts "You picked #{selection}"
+     puts "You picked #{selection}"
    
     # #7    
      case selection
@@ -47,7 +48,11 @@
        system "clear"
        view_entry_number
        main_menu
-     when 6
+     when 6 
+       system "clear"
+       nuke_em_entries
+       main_menu
+     when 7
        puts "Good-bye!"
  # #8
        exit(0)
@@ -61,17 +66,19 @@
  
  # #10
    def view_all_entries
+    
     @address_book.entries.each do |entry|
-      #system "clear"
       puts entry.to_s
-    end  
+      
  # #15
+    
        entry_submenu(entry)
-   end
- 
+    end
+   
      system "clear"
      puts "End of entries"
    end
+     
  
    def create_entry
      system "clear"
@@ -127,6 +134,7 @@
        read_csv
      end
    end
+   
    def view_entry_number
  
      print "Input the entry number of the AddressBook entry you wish to see: "
@@ -142,10 +150,6 @@
      end
      
      puts @address_book.entries[entry_number].to_s
-     
-     entry_submenu(entry)
-     
-     system "clear"
      
      puts "End of entries"
    end
@@ -178,10 +182,13 @@
        puts "#{selection} is not a valid input"
        entries_submenu(entry)
      end
+   end
+   
    def delete_entry(entry)
      @address_book.entries.delete(entry)
      puts "#{entry.name} has been deleted"
    end
+ 
    def edit_entry(entry)
  # #4
      print "Updated name: "
@@ -199,6 +206,8 @@
      puts "Updated entry:"
      puts entry
    end
+   
+ 
    def search_submenu(entry)
  # #12
      puts "\nd - delete entry"
@@ -227,4 +236,19 @@
        search_submenu(entry)
      end
    end
+  
+   #def nuke_em_entries
+     
+    # @address_book.entries.clear
+     
+     #puts "The address book is clear of entries"
+   #end
+   def nuke_em_entries
+     
+     @address_book.entries.clear
+     
+     puts "The address book is clear of entries"
    end
+   
+ end
+ 
