@@ -62,12 +62,12 @@
  # #10
    def view_all_entries
     @address_book.entries.each do |entry|
-      #system "clear"
+      system "clear"
       puts entry.to_s
     end  
  # #15
        entry_submenu(entry)
-   end
+     end
  
      system "clear"
      puts "End of entries"

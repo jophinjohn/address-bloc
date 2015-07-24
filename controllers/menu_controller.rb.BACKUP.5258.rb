@@ -62,14 +62,20 @@
  # #10
    def view_all_entries
     @address_book.entries.each do |entry|
-      #system "clear"
+<<<<<<< HEAD
+      system "clear"
       puts entry.to_s
     end  
  # #15
        entry_submenu(entry)
-   end
+     end
  
      system "clear"
+=======
+      puts entry.to_s
+    end  
+ #
+>>>>>>> master
      puts "End of entries"
    end
  
@@ -132,22 +138,26 @@
      print "Input the entry number of the AddressBook entry you wish to see: "
      
      entry_number = gets.to_i
-     a = *(1..@address_book.entries.count)
-     puts '#{a}'
-     if  a.include?(entry_number)
-      entry_number - 1
+     array_of_entrycount = *(1..@address_book.entries.count)
+     if  array_of_entrycount.include?(entry_number)
+      system "clear" 
+      puts @address_book.entries[entry_number - 1].to_s
      else
        puts "Invalid entry number. Please try again"
        view_entry_number
      end
      
+<<<<<<< HEAD
      puts @address_book.entries[entry_number].to_s
      
      entry_submenu(entry)
      
      system "clear"
+=======
+    
      
-     puts "End of entries"
+>>>>>>> master
+     
    end
 
    def entry_submenu(entry)
