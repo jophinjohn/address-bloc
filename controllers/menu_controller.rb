@@ -161,7 +161,7 @@
      selection = gets.chomp
  
      case selection
- # #18
+ # #18j
      when "n"
  # #19j
      when "d"
