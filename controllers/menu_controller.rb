@@ -68,8 +68,10 @@
    def view_all_entries
     
     @address_book.entries.each do |entry|
-      #system "clear"
       puts entry.to_s
+<<<<<<< HEAD
+      
+=======
 <<<<<<< HEAD
       
  # #15
@@ -79,10 +81,17 @@
    
 =======
     end  
+>>>>>>> master
  # #15
+    
        entry_submenu(entry)
+<<<<<<< HEAD
+    end
+   
+=======
    end
  
+>>>>>>> master
 >>>>>>> master
      system "clear"
      puts "End of entries"
@@ -162,11 +171,14 @@
 <<<<<<< HEAD
 =======
      
+<<<<<<< HEAD
+=======
      entry_submenu(entry)
      
      system "clear"
 >>>>>>> master
      
+>>>>>>> master
      puts "End of entries"
    end
 
@@ -198,10 +210,13 @@
        puts "#{selection} is not a valid input"
        entries_submenu(entry)
      end
+   end
+   
    def delete_entry(entry)
      @address_book.entries.delete(entry)
      puts "#{entry.name} has been deleted"
    end
+ 
    def edit_entry(entry)
  # #4
      print "Updated name: "
@@ -219,6 +234,8 @@
      puts "Updated entry:"
      puts entry
    end
+   
+ 
    def search_submenu(entry)
  # #12
      puts "\nd - delete entry"
@@ -247,7 +264,24 @@
        search_submenu(entry)
      end
    end
+  
+   #def nuke_em_entries
+     
+    # @address_book.entries.clear
+     
+     #puts "The address book is clear of entries"
+   #end
+   def nuke_em_entries
+     
+     @address_book.entries.clear
+     
+     puts "The address book is clear of entries"
    end
+<<<<<<< HEAD
+   
+ end
+ 
+=======
 <<<<<<< HEAD
    
    def delete_entry(entry)
@@ -313,4 +347,5 @@
  end
  
 =======
+>>>>>>> master
 >>>>>>> master
